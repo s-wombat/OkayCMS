@@ -15,6 +15,7 @@ class View extends Okay {
     public $js_version;
     public $css_version;
     public $current_url;
+    public $quantity_orders;
 
     /* Класс View похож на синглтон, храним статически его инстанс */
     private static $view_instance;
@@ -59,6 +60,7 @@ class View extends Okay {
             $this->js_version   = &self::$view_instance->js_version;
             $this->css_version  = &self::$view_instance->css_version;
             $this->current_url  = &self::$view_instance->current_url;
+            $this->quantity_orders  = &self::$view_instance->quantity_orders;
         } else {
             // Сохраняем свой инстанс в статической переменной,
             // чтобы в следующий раз использовать его
@@ -165,7 +167,19 @@ class View extends Okay {
                     $this->group = $this->users->get_group($this->user->group_id);
                 }
             }
-            
+
+            // Количество выполненных заказов пользователя
+            if(isset($_SESSION['user_id'])) {
+                $orders = $this->orders->get_orders(array('user_id'=>$this->user->id));
+                $quantity = 0;
+                foreach ($orders as $order) {
+                    if($order->status_id == 4 && $order->paid == 1) {
+                        $quantity++;
+                    }
+                }
+                $this->quantity_orders = $quantity;
+            }
+
             // Текущая страница (если есть)
             $subdir = substr(dirname(dirname(__FILE__)), strlen($_SERVER['DOCUMENT_ROOT']));
             $page_url = trim(substr($_SERVER['REQUEST_URI'], strlen($subdir)),"/");
@@ -200,6 +214,8 @@ class View extends Okay {
             
             $this->design->assign('config',     $this->config);
             $this->design->assign('settings',   $this->settings);
+
+            $this->design->assign('quantity_orders', $this->quantity_orders);
             
             // Настраиваем плагины для смарти
             /*Распаковка переменной под админом*/

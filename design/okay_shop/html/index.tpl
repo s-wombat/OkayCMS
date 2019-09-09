@@ -153,9 +153,7 @@
             </ul>
         </div>
     </nav>
-
     <div class="container">
-
         {* Logo *}
         <a class="logo" href="{if $smarty.get.module=='MainView'}javascript:;{else}{$lang_link}{/if}">
             <img src="design/{$settings->theme|escape}/images/{$settings->site_logo}" alt="{$settings->site_name|escape}"/>
@@ -201,6 +199,13 @@
         <a class="fn_callback callback" href="#fn_callback" data-language="index_back_call"><span>{$lang->index_back_call}</span></a>
 
     </div>
+
+    {* Quantity of completed orders *}
+    {if $user}
+        <div class="container">
+            <p style="float:right"> Количество выполненных заказов <span style="color:red;"> {$quantity_orders}</span></p>
+        </div>
+    {/if}
 
     <div class="header_bottom">
         <div class="container">

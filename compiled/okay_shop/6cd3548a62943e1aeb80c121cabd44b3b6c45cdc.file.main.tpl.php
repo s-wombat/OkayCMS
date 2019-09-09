@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 13:00:56
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 18:46:42
          compiled from "G:\OSPanel\domains\OkayCMS\design\okay_shop\html\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11864911035d7622d869d353-02237752%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6cd3548a62943e1aeb80c121cabd44b3b6c45cdc' => 
     array (
       0 => 'G:\\OSPanel\\domains\\OkayCMS\\design\\okay_shop\\html\\main.tpl',
-      1 => 1568023006,
+      1 => 1568042980,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d7622d87452f8_84462236',
   'variables' => 
   array (
     'is_mobile' => 0,
@@ -32,8 +34,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'post' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d7622d87452f8_84462236',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d7622d87452f8_84462236')) {function content_5d7622d87452f8_84462236($_smarty_tpl) {?>
 
@@ -41,6 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 if ($_smarty_tpl->parent != null) $_smarty_tpl->parent->tpl_vars['canonical'] = clone $_smarty_tpl->tpl_vars['canonical'];?>
 
 <div class="container">
+
     <?php if ($_smarty_tpl->tpl_vars['is_mobile']->value===false&&$_smarty_tpl->tpl_vars['is_tablet']->value===false) {?>
         <div class="advantages">
             <div class="container">

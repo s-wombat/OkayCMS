@@ -11,7 +11,7 @@ class UserView extends View {
             exit();
         }
 
-        /*Обновление данных клиеньа*/
+        /*Обновление данных клиента*/
         if($this->request->method('post') && $this->request->post('user_save')) {
             $user = new stdClass();
             $user->name       = $this->request->post('name');
@@ -68,10 +68,10 @@ class UserView extends View {
         }
         $this->design->assign('orders_status', $orders_status);
         $this->design->assign('orders', $orders);
-        
+
         $this->design->assign('meta_title', $this->user->name);
         $body = $this->design->fetch('user.tpl');
-        
+
         return $body;
     }
     

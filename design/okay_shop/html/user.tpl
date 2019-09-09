@@ -108,7 +108,11 @@
                             </td>
                         </tr>
                     {/foreach}
+
                 </table>
+                <div>
+                    Количество выполненных заказов <span style="color:red;"> {$quantity_orders}</span>
+                </div>
             </div>
         {/if}
     </div>

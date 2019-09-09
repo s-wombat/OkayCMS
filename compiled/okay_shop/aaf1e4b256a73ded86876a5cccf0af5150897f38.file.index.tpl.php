@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 13:00:56
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 19:09:47
          compiled from "G:\OSPanel\domains\OkayCMS\design\okay_shop\html\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7656073555d7622d8958772-93522056%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aaf1e4b256a73ded86876a5cccf0af5150897f38' => 
     array (
       0 => 'G:\\OSPanel\\domains\\OkayCMS\\design\\okay_shop\\html\\index.tpl',
-      1 => 1568023006,
+      1 => 1568045287,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d7622d8ae3056_72033992',
   'variables' => 
   array (
     'language' => 0,
@@ -36,6 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'currencies' => 0,
     'currency' => 0,
     'c' => 0,
+    'quantity_orders' => 0,
     'keyword' => 0,
     'is_mobile' => 0,
     'is_tablet' => 0,
@@ -50,8 +53,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'admintooltip' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d7622d8ae3056_72033992',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d7622d8ae3056_72033992')) {function content_5d7622d8ae3056_72033992($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'G:\\OSPanel\\domains\\OkayCMS\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -258,9 +259,7 @@ $_smarty_tpl->tpl_vars['c']->_loop = true;
             </ul>
         </div>
     </nav>
-
     <div class="container">
-
         
         <a class="logo" href="<?php if ($_GET['module']=='MainView') {?>javascript:;<?php } else { ?><?php echo $_smarty_tpl->tpl_vars['lang_link']->value;?>
 <?php }?>">
@@ -322,6 +321,14 @@ user/login'" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value->index_logi
 </span></a>
 
     </div>
+
+    
+    <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+        <div class="container">
+            <p style="float:right"> Количество выполненных заказов <span style="color:red;"> <?php echo $_smarty_tpl->tpl_vars['quantity_orders']->value;?>
+</span></p>
+        </div>
+    <?php }?>
 
     <div class="header_bottom">
         <div class="container">
