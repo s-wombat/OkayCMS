@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 19:09:47
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-10 14:14:45
          compiled from "G:\OSPanel\domains\OkayCMS\design\okay_shop\html\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7656073555d7622d8958772-93522056%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aaf1e4b256a73ded86876a5cccf0af5150897f38' => 
     array (
       0 => 'G:\\OSPanel\\domains\\OkayCMS\\design\\okay_shop\\html\\index.tpl',
-      1 => 1568045287,
+      1 => 1568114084,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'currencies' => 0,
     'currency' => 0,
     'c' => 0,
+    'msg_time' => 0,
     'quantity_orders' => 0,
     'keyword' => 0,
     'is_mobile' => 0,
@@ -299,7 +300,7 @@ user/login'" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value->index_logi
             <div class="times_inner">
                 <span class="times_text" data-language="index_we_open"><?php echo $_smarty_tpl->tpl_vars['lang']->value->index_we_open;?>
 </span>
-                <div><span data-language="company_open_hours"><?php echo $_smarty_tpl->tpl_vars['lang']->value->company_open_hours;?>
+                <div><span data-language="company_open_hours"><?php echo $_smarty_tpl->tpl_vars['msg_time']->value;?>
 </span></div>
             </div>
         </div>

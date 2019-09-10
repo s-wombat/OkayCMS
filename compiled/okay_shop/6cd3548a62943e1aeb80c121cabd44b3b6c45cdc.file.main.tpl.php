@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 18:46:42
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-10 09:16:21
          compiled from "G:\OSPanel\domains\OkayCMS\design\okay_shop\html\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11864911035d7622d869d353-02237752%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6cd3548a62943e1aeb80c121cabd44b3b6c45cdc' => 
     array (
       0 => 'G:\\OSPanel\\domains\\OkayCMS\\design\\okay_shop\\html\\main.tpl',
-      1 => 1568042980,
+      1 => 1568046786,
       2 => 'file',
     ),
   ),
@@ -41,7 +41,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 if ($_smarty_tpl->parent != null) $_smarty_tpl->parent->tpl_vars['canonical'] = clone $_smarty_tpl->tpl_vars['canonical'];?>
 
 <div class="container">
-
     <?php if ($_smarty_tpl->tpl_vars['is_mobile']->value===false&&$_smarty_tpl->tpl_vars['is_tablet']->value===false) {?>
         <div class="advantages">
             <div class="container">

@@ -16,6 +16,7 @@ class View extends Okay {
     public $css_version;
     public $current_url;
     public $quantity_orders;
+    public $msg_time;
 
     /* Класс View похож на синглтон, храним статически его инстанс */
     private static $view_instance;
@@ -61,6 +62,7 @@ class View extends Okay {
             $this->css_version  = &self::$view_instance->css_version;
             $this->current_url  = &self::$view_instance->current_url;
             $this->quantity_orders  = &self::$view_instance->quantity_orders;
+            $this->msg_time  = &self::$view_instance->msg_time;
         } else {
             // Сохраняем свой инстанс в статической переменной,
             // чтобы в следующий раз использовать его
@@ -180,6 +182,21 @@ class View extends Okay {
                 $this->quantity_orders = $quantity;
             }
 
+            //Режим работы магазина
+            date_default_timezone_set('Europe/Moscow');
+            $date = date("D");
+            $time = date("H");
+            $h = 18 - $time;
+            if($time > 9 && $time < 18 && $date!='Sun' && $date!='Sat') {
+                $this->msg_time = 'мы закроемся через '.$h.' часа, в 18:00';
+            }elseif ($time < 9 && $time > 18 && $date!='Sun' && $date!='Sat'){
+                $this->msg_time = 'мы откроемся в 9:00';
+            }else{
+                $this->msg_time = 'мы откроемся в понедельник, в 9:00';
+            }
+
+
+
             // Текущая страница (если есть)
             $subdir = substr(dirname(dirname(__FILE__)), strlen($_SERVER['DOCUMENT_ROOT']));
             $page_url = trim(substr($_SERVER['REQUEST_URI'], strlen($subdir)),"/");
@@ -216,7 +233,8 @@ class View extends Okay {
             $this->design->assign('settings',   $this->settings);
 
             $this->design->assign('quantity_orders', $this->quantity_orders);
-            
+            $this->design->assign('msg_time', $this->msg_time);
+
             // Настраиваем плагины для смарти
             /*Распаковка переменной под админом*/
             $this->design->smarty->registerPlugin('modifier', 'printa',                     array($this, 'printa'));
@@ -245,6 +263,20 @@ class View extends Okay {
         return false;
     }
 
+    public function get_time_date() {
+        //Режим работы магазина
+//        $date = date("D, d M Y");
+        $time = date("H");
+//            $this->time_now = time();
+        if($time > 9 && $time <18) {
+            $msg = 'мы закроемся через N (час|часа|часов), в 18:00';
+        }elseif ($time > 18 && $time < 9) {
+            $msg = 'мы откроемся через N (час|часа|часов), в 9:00';
+        }else {
+            $msg = 'мы открыты';
+        }
+        return $msg;
+    }
     public function get_captcha_plugin($params, &$smarty) {
         if(isset($params['var'])) {
             $number = 0;
