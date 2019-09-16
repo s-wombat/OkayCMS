@@ -19,10 +19,14 @@
             {include file='cart_deliveries.tpl'}
         </div>
         
+        <div id="fn_min">
+            {include file='min.tpl'}
+        </div>
+
         {* The form heading *}
         <div class="h2" data-language="cart_form_header">{$lang->cart_form_header}</div>
-
-        <div class="block padding"> 
+        {* The list of products in the cart *}
+        <div class="block padding">
             {* Form error messages *}
             {if $error}
                 <div class="message_error">
@@ -82,34 +86,39 @@
                 <span class="form_placeholder">{$lang->cart_order_comment}</span>
             </div>
 
-            {* Captcha *}
-            {if $settings->captcha_cart}
-                {if $settings->captcha_type == "v3"}
-                    <div class="captcha row" style="display: none;">
-                        <div class="fn_recaptchav3">
-                            <input type="hidden" name="recaptcha_token"  value="" class="fn_recaptcha_token" />
+                {* Captcha *}
+                {if $settings->captcha_cart}
+                    {if $settings->captcha_type == "v3"}
+                        <div class="captcha row" style="display: none;">
+                            <div class="fn_recaptchav3">
+                                <input type="hidden" name="recaptcha_token"  value="" class="fn_recaptcha_token" />
+                            </div>
                         </div>
-                    </div>
-                {elseif $settings->captcha_type == "v2"}
-                    <div class="captcha row" style="">
-                        <div id="recaptcha1"></div>
-                    </div>
-                {elseif $settings->captcha_type == "default"}
-                    {get_captcha var="captcha_cart"}
-                    <div class="captcha">
-                        <div class="secret_number">{$captcha_cart[0]|escape} + ? =  {$captcha_cart[1]|escape}</div>
-                        <span class="form_captcha">
-                            <input class="form_input input_captcha placeholder_focus" type="text" name="captcha_code" value="" data-language="form_enter_captcha" >
-                            <span class="form_placeholder">{$lang->form_enter_captcha}*</span>
-                         </span>
-                    </div>
+                    {elseif $settings->captcha_type == "v2"}
+                        <div class="captcha row" style="">
+                            <div id="recaptcha1"></div>
+                        </div>
+                    {elseif $settings->captcha_type == "default"}
+                        {get_captcha var="captcha_cart"}
+                        <div class="captcha">
+                            <div class="secret_number">{$captcha_cart[0]|escape} + ? =  {$captcha_cart[1]|escape}</div>
+                            <span class="form_captcha">
+                                <input class="form_input input_captcha placeholder_focus" type="text" name="captcha_code" value="" data-language="form_enter_captcha" >
+                                <span class="form_placeholder">{$lang->form_enter_captcha}*</span>
+                             </span>
+                        </div>
+                    {/if}
                 {/if}
-            {/if}
-            <input type="hidden" name="checkout" value="1">
-            {* Submit button *}
-            <input class="button g-recaptcha" type="submit" name="checkout" data-language="cart_checkout" {if $settings->captcha_type == "invisible"}data-sitekey="{$settings->public_recaptcha_invisible}" data-badge='bottomleft' data-callback="onSubmit"{/if} value="{$lang->cart_checkout}">
-        </div>    
+                <input type="hidden" name="checkout" value="1">
+                {* Submit button *}
+
+                <input class="button g-recaptcha" type="submit" name="checkout" data-language="cart_checkout"
+                       {if $settings->captcha_type == "invisible"}data-sitekey="{$settings->public_recaptcha_invisible}" data-badge='bottomleft' data-callback="onSubmit"{/if}
+
+                       value="{$lang->cart_checkout}">
+        </div>
     </form>
+
 
 {else}
     <div class="block"> 

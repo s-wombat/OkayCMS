@@ -282,6 +282,7 @@
                 </form>
             </div>
         </div>
+        {include file='min_admin.tpl'}
     </div>
 </div>
 

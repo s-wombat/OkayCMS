@@ -4,8 +4,10 @@ require_once('api/Okay.php');
 
 class OrderSettingsAdmin extends Okay {
 
+    /**
+     * @return mixed
+     */
     public function fetch() {
-
         /*Статусы заказов*/
         if($this->request->post('status')) {
             // Сортировка

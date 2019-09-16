@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-09 13:05:22
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-09-16 09:50:50
          compiled from "backend\design\html\order_settings.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16154902435d7623e26b1933-20318030%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b27a751b185510197d2d203ade17d807b09fc3fa' => 
     array (
       0 => 'backend\\design\\html\\order_settings.tpl',
-      1 => 1568022999,
+      1 => 1568615861,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d7623e27d6902_92834344',
   'variables' => 
   array (
     'btr' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'label' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d7623e27d6902_92834344',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d7623e27d6902_92834344')) {function content_5d7623e27d6902_92834344($_smarty_tpl) {?>
 <?php $_smarty_tpl->tpl_vars['meta_title'] = new Smarty_variable($_smarty_tpl->tpl_vars['btr']->value->order_settings_labels, null, 1);
@@ -399,6 +399,8 @@ $_smarty_tpl->tpl_vars['label']->_loop = true;
                 </form>
             </div>
         </div>
+        <?php echo $_smarty_tpl->getSubTemplate ('min_admin.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
     </div>
 </div>
 

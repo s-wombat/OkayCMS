@@ -51,6 +51,7 @@ class Okay {
         'features_aliases'     => 'FeaturesAliases',
         'features_values'      => 'FeaturesValues',
         'recaptcha'            => 'Recaptcha',
+        'minpriceorder' => 'MinPriceOrder',
 
     );
     
@@ -205,6 +206,7 @@ class Okay {
         $this->db->query("TRUNCATE TABLE `__related_blogs`");
         $this->db->query("TRUNCATE TABLE `__related_products`");
         $this->db->query("TRUNCATE TABLE `__variants`");
+        $this->db->query("TRUNCATE TABLE `__minpriceorder`");
     }
     
     //Добавляет к массиву пар для транслита, пары для замены спецсимволов на буквенные обозначения
