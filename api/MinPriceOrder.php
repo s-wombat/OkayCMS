@@ -44,5 +44,4 @@ class MinPriceOrder extends Okay
 
         return $min_price;
     }
-    // testtesttesttesttest
 }

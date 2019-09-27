@@ -9,4 +9,3 @@
             {var_dump($_POST['min_price'])}
         </div>
     </div>
-    {*testtesttesttesttest*}

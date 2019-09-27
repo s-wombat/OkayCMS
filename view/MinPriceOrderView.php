@@ -18,6 +18,5 @@ class MinPriceOrderView extends View {
         return $this->design->fetch('min.tpl');
 
     }
-    // testtesttesttesttest
     
 }
