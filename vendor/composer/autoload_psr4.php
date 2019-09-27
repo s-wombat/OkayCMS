@@ -6,7 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WebPConvert\\' => array($vendorDir . '/rosell-dk/webp-convert/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
-    'ImageMimeTypeGuesser\\' => array($vendorDir . '/rosell-dk/image-mime-type-guesser/src'),
 );

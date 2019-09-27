@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8bc24e5ea782bd17efd96d5434c64c9",
+    "content-hash": "aeb7b3c2c1dfa902584318c2fd1401e1",
     "packages": [
         {
             "name": "gregwar/cache",
@@ -51,17 +51,17 @@
         },
         {
             "name": "gregwar/image",
-            "version": "v2.0.24",
+            "version": "v2.0.25",
             "target-dir": "Gregwar/Image",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gregwar/Image.git",
-                "reference": "52145816255dd20cb4bb115d0f9e1030c6287994"
+                "reference": "03534d5760cbea5c96e6292041ff81a3bb205c36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Image/zipball/52145816255dd20cb4bb115d0f9e1030c6287994",
-                "reference": "52145816255dd20cb4bb115d0f9e1030c6287994",
+                "url": "https://api.github.com/repos/Gregwar/Image/zipball/03534d5760cbea5c96e6292041ff81a3bb205c36",
+                "reference": "03534d5760cbea5c96e6292041ff81a3bb205c36",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "gd",
                 "image"
             ],
-            "time": "2019-01-27T15:10:06+00:00"
+            "time": "2019-03-01T15:55:29+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

@@ -7,32 +7,16 @@ namespace Composer\Autoload;
 class ComposerStaticInita6cbbdaa33fa57f1957dd99305ecf36d
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'WebPConvert\\' => 12,
-        ),
         'P' => 
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'I' => 
-        array (
-            'ImageMimeTypeGuesser\\' => 21,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WebPConvert\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/rosell-dk/webp-convert/src',
-        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
-        'ImageMimeTypeGuesser\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/rosell-dk/image-mime-type-guesser/src',
         ),
     );
 
